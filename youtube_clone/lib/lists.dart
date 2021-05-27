@@ -22,8 +22,16 @@ List<Video> videos = [
       thumbnail: 'assets/kalle_thumb.jpg',
       duration: '12:52',
       time: 5,
-      views: 200,
+      views: 2000,
       title: 'How do you Learn Python as a beginner'),
+  Video(
+      name: 'Linus Tech Tips',
+      profile: 'assets/linus.png',
+      thumbnail: 'assets/linus_thumb.jpg',
+      duration: '18:29',
+      time: 50,
+      views: 3500,
+      title: 'NEW 64 Core AMD EPYC Cpus'),
   Video(
       name: 'JayzTwoCents',
       profile: 'assets/jay.jpg',

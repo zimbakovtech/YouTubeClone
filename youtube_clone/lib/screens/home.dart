@@ -70,7 +70,7 @@ class _HomeState extends State<Home> {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 5.0),
+            padding: const EdgeInsets.only(bottom: 8.0),
             child: Divider(
               height: 1.0,
               color: Colors.grey[800],
@@ -108,8 +108,10 @@ class _HomeState extends State<Home> {
   List videosList() {
     List<Widget> videos = [];
 
-    for (int i = 0; i < 2; i++) {
-      videos.add(video(i));
+    for (int x = 0; x < 3; x++) {
+      for (int i = 0; i < 3; i++) {
+        videos.add(video(i));
+      }
     }
 
     return videos;
@@ -131,7 +133,7 @@ class _HomeState extends State<Home> {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(videos[i].thumbnail),
-                      fit: BoxFit.fitWidth,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
@@ -144,9 +146,13 @@ class _HomeState extends State<Home> {
                         height: 20.0,
                         alignment: Alignment.center,
                         color: Colors.black,
-                        child: Text(
-                          videos[i].duration,
-                          style: TextStyle(color: Colors.white),
+                        child: Padding(
+                          padding: const EdgeInsets.all(2.0),
+                          child: Text(
+                            videos[i].duration,
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 13.0),
+                          ),
                         ),
                       ),
                     ],
@@ -181,7 +187,7 @@ class _HomeState extends State<Home> {
                       style: TextStyle(color: Colors.white, fontSize: 16.0),
                     ),
                     Text(
-                      'JayzTwoCents  3.3M Views  6 months ago',
+                      '${videos[i].name} · ${videos[i].views > 999 ? videos[i].views ~/ 1000 : videos[i].views}${videos[i].views > 999 ? 'M views' : 'K views'} · ${videos[i].time > 59 ? videos[i].time ~/ 30 : videos[i].time > 29 ? 1 : videos[i].time > 13 ? videos[i].time ~/ 7 : videos[i].time > 6 ? 1 : videos[i].time} ${videos[i].time > 59 ? 'months ago' : videos[i].time > 29 ? 'month ago' : videos[i].time > 13 ? 'weeks ago' : videos[i].time > 6 ? 'week ago' : videos[i].time > 1 ? 'days ago' : 'day ago'} ',
                       style: TextStyle(color: Colors.grey[700], fontSize: 13.0),
                     ),
                   ],
