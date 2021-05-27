@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage>
             child: Center(
               child: Icon(
                 Icons.add_circle_outline,
-                size: 40.0,
+                size: 35.0,
               ),
             ),
           ),
@@ -117,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage>
                     : Icons.subscriptions_outlined),
                 Text(
                   'Subscriptions',
-                  style: TextStyle(fontSize: 8.0),
+                  style: TextStyle(fontSize: 7.4),
                 ),
               ],
             ),
