@@ -4,7 +4,7 @@ class Video {
   String name;
   String profile;
   int views;
-  String time;
+  int time;
   String title;
 
   Video(

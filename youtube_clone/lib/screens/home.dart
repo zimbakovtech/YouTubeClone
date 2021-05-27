@@ -86,29 +86,8 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-          Container(
-            height: 300.0,
-            width: MediaQuery.of(context).size.width,
-            child: Column(
-              children: [
-                Container(
-                  height: 300,
-                  width: MediaQuery.of(context).size.width,
-                  child: Stack(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('assets/linus.png'),
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+          Column(
+            children: videosList(),
           ),
         ],
       ),
@@ -124,6 +103,102 @@ class _HomeState extends State<Home> {
     }
 
     return suggestions;
+  }
+
+  List videosList() {
+    List<Widget> videos = [];
+
+    for (int i = 0; i < 2; i++) {
+      videos.add(video(i));
+    }
+
+    return videos;
+  }
+
+  Container video(int i) {
+    return Container(
+      height: 309.0,
+      width: MediaQuery.of(context).size.width,
+      child: Column(
+        children: [
+          Container(
+            height: 250,
+            width: MediaQuery.of(context).size.width,
+            child: Stack(
+              alignment: Alignment.bottomRight,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(videos[i].thumbnail),
+                      fit: BoxFit.fitWidth,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 5.0, bottom: 5.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Container(
+                        height: 20.0,
+                        alignment: Alignment.center,
+                        color: Colors.black,
+                        child: Text(
+                          videos[i].duration,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 5.0),
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  child: Container(
+                    height: 40.0,
+                    width: 40.0,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(videos[i].profile),
+                        fit: BoxFit.contain,
+                      ),
+                      shape: BoxShape.circle,
+                    ),
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      videos[i].title,
+                      style: TextStyle(color: Colors.white, fontSize: 16.0),
+                    ),
+                    Text(
+                      'JayzTwoCents  3.3M Views  6 months ago',
+                      style: TextStyle(color: Colors.grey[700], fontSize: 13.0),
+                    ),
+                  ],
+                ),
+                Spacer(),
+                IconButton(
+                  icon: Icon(Icons.more_vert),
+                  color: Colors.white,
+                  iconSize: 20.0,
+                  onPressed: () {},
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   Container suggestion(String text) {

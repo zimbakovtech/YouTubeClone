@@ -17,11 +17,19 @@ List<String> suggestionsNames = [
 
 List<Video> videos = [
   Video(
+      name: 'Kalle Hallden',
+      profile: 'assets/kalle.jpg',
+      thumbnail: 'assets/kalle_thumb.jpg',
+      duration: '12:52',
+      time: 5,
+      views: 200,
+      title: 'How do you Learn Python as a beginner'),
+  Video(
       name: 'JayzTwoCents',
       profile: 'assets/jay.jpg',
-      thumbnail: 'jay_thumb.jpg',
+      thumbnail: 'assets/jay_thumb.jpg',
       duration: '15:41',
-      time: '8',
+      time: 8,
       views: 1600,
-      title: 'Reacting to YOUR Setups!'),
+      title: 'AMD\'s new generation of CPUs'),
 ];
