@@ -71,69 +71,84 @@ class _MyHomePageState extends State<MyHomePage>
         indicatorColor: Colors.transparent,
         controller: _tabController,
         tabs: [
-          Container(
-            height: 40.0,
-            child: Column(
-              children: [
-                Icon(_currentIndex == 0
-                    ? Icons.home_filled
-                    : Icons.home_outlined),
-                Text(
-                  'Home',
-                  style: TextStyle(fontSize: 9.0),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            height: 40.0,
-            child: Column(
-              children: [
-                Icon(_currentIndex == 1
-                    ? Icons.explore
-                    : Icons.explore_outlined),
-                Text(
-                  'Explore',
-                  style: TextStyle(fontSize: 9.0),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            height: 40.0,
-            child: Center(
-              child: Icon(
-                Icons.add_circle_outline,
-                size: 35.0,
+          Padding(
+            padding: const EdgeInsets.only(top: 5.0),
+            child: Container(
+              height: 40.0,
+              child: Column(
+                children: [
+                  Icon(_currentIndex == 0
+                      ? Icons.home_filled
+                      : Icons.home_outlined),
+                  Text(
+                    'Home',
+                    style: TextStyle(fontSize: 9.0),
+                  ),
+                ],
               ),
             ),
           ),
-          Container(
-            height: 40.0,
-            child: Column(
-              children: [
-                Icon(_currentIndex == 3
-                    ? Icons.subscriptions
-                    : Icons.subscriptions_outlined),
-                Text(
-                  'Subscriptions',
-                  style: TextStyle(fontSize: 7.4),
-                ),
-              ],
+          Padding(
+            padding: const EdgeInsets.only(top: 5.0),
+            child: Container(
+              height: 40.0,
+              child: Column(
+                children: [
+                  Icon(_currentIndex == 1
+                      ? Icons.explore
+                      : Icons.explore_outlined),
+                  Text(
+                    'Explore',
+                    style: TextStyle(fontSize: 9.0),
+                  ),
+                ],
+              ),
             ),
           ),
-          Container(
-            height: 40.0,
-            child: Column(
-              children: [
-                Icon(_currentIndex == 4
-                    ? Icons.library_add
-                    : Icons.library_add_outlined),
-                Text(
-                  'Library',
-                  style: TextStyle(fontSize: 9.0),
+          Padding(
+            padding: const EdgeInsets.only(top: 5.0),
+            child: Container(
+              height: 40.0,
+              child: Center(
+                child: Icon(
+                  Icons.add_circle_outline,
+                  size: 35.0,
                 ),
-              ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5.0),
+            child: Container(
+              height: 40.0,
+              child: Column(
+                children: [
+                  Icon(_currentIndex == 3
+                      ? Icons.subscriptions
+                      : Icons.subscriptions_outlined),
+                  Text(
+                    'Subscriptions',
+                    style: TextStyle(fontSize: 7.4),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5.0),
+            child: Container(
+              height: 40.0,
+              child: Column(
+                children: [
+                  Icon(_currentIndex == 4
+                      ? Icons.library_add
+                      : Icons.library_add_outlined),
+                  Text(
+                    'Library',
+                    style: TextStyle(fontSize: 9.0),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
