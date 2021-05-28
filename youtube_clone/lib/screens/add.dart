@@ -8,6 +8,8 @@ class Add extends StatefulWidget {
 class _AddState extends State<Add> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: Colors.grey[900],
+    );
   }
 }

@@ -45,26 +45,29 @@ class _HomeState extends State<Home> {
             ),
             actions: [
               IconButton(
-                icon: Icon(Icons.cast_outlined),
+                icon: Icon(Icons.cast_outlined, color: Colors.white),
                 onPressed: () {},
               ),
               IconButton(
-                icon: Icon(Icons.notifications_outlined),
+                icon: Icon(Icons.notifications_outlined, color: Colors.white),
                 onPressed: () {},
               ),
               IconButton(
-                icon: Icon(Icons.search_outlined),
-                onPressed: () {},
+                icon: Icon(Icons.search_outlined, color: Colors.white),
+                onPressed: () => Navigator.of(context).pushNamed('/search'),
               ),
-              Container(
-                height: 25.0,
-                width: 25.0,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/dm.jpg'),
-                    fit: BoxFit.contain,
+              Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: Container(
+                  height: 25.0,
+                  width: 25.0,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/dm.jpg'),
+                      fit: BoxFit.contain,
+                    ),
+                    shape: BoxShape.circle,
                   ),
-                  shape: BoxShape.circle,
                 ),
               ),
             ],
@@ -115,6 +118,25 @@ class _HomeState extends State<Home> {
     }
 
     return videos;
+  }
+
+  Container suggestion(String text) {
+    return Container(
+      height: 20.0,
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: Text(
+            text,
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+      ),
+      decoration: BoxDecoration(
+        color: Colors.grey[800],
+        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+      ),
+    );
   }
 
   Container video(int i) {
@@ -203,25 +225,6 @@ class _HomeState extends State<Home> {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Container suggestion(String text) {
-    return Container(
-      height: 20.0,
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Text(
-            text,
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-      ),
-      decoration: BoxDecoration(
-        color: Colors.grey[800],
-        borderRadius: BorderRadius.all(Radius.circular(10.0)),
       ),
     );
   }

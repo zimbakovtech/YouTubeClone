@@ -3,6 +3,7 @@ import 'package:youtube_clone/screens/add.dart';
 import 'package:youtube_clone/screens/explore.dart';
 import 'package:youtube_clone/screens/home.dart';
 import 'package:youtube_clone/screens/library.dart';
+import 'package:youtube_clone/screens/search.dart';
 import 'package:youtube_clone/screens/subscriptions.dart';
 
 void main() {
@@ -18,9 +19,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.grey,
       ),
       home: MyHomePage(),
+      routes: {
+        '/search': (context) => Search(),
+      },
     );
   }
 }
@@ -77,12 +81,15 @@ class _MyHomePageState extends State<MyHomePage>
               height: 40.0,
               child: Column(
                 children: [
-                  Icon(_currentIndex == 0
-                      ? Icons.home_filled
-                      : Icons.home_outlined),
+                  Icon(
+                    _currentIndex == 0
+                        ? Icons.home_filled
+                        : Icons.home_outlined,
+                    color: Colors.white,
+                  ),
                   Text(
                     'Home',
-                    style: TextStyle(fontSize: 9.0),
+                    style: TextStyle(fontSize: 9.0, color: Colors.white),
                   ),
                 ],
               ),
@@ -94,12 +101,13 @@ class _MyHomePageState extends State<MyHomePage>
               height: 40.0,
               child: Column(
                 children: [
-                  Icon(_currentIndex == 1
-                      ? Icons.explore
-                      : Icons.explore_outlined),
+                  Icon(
+                    _currentIndex == 1 ? Icons.explore : Icons.explore_outlined,
+                    color: Colors.white,
+                  ),
                   Text(
                     'Explore',
-                    style: TextStyle(fontSize: 9.0),
+                    style: TextStyle(fontSize: 9.0, color: Colors.white),
                   ),
                 ],
               ),
@@ -112,6 +120,7 @@ class _MyHomePageState extends State<MyHomePage>
               child: Center(
                 child: Icon(
                   Icons.add_circle_outline,
+                  color: Colors.white,
                   size: 35.0,
                 ),
               ),
@@ -123,12 +132,15 @@ class _MyHomePageState extends State<MyHomePage>
               height: 40.0,
               child: Column(
                 children: [
-                  Icon(_currentIndex == 3
-                      ? Icons.subscriptions
-                      : Icons.subscriptions_outlined),
+                  Icon(
+                    _currentIndex == 3
+                        ? Icons.subscriptions
+                        : Icons.subscriptions_outlined,
+                    color: Colors.white,
+                  ),
                   Text(
                     'Subscriptions',
-                    style: TextStyle(fontSize: 7.4),
+                    style: TextStyle(fontSize: 7.4, color: Colors.white),
                   ),
                 ],
               ),
@@ -140,12 +152,15 @@ class _MyHomePageState extends State<MyHomePage>
               height: 40.0,
               child: Column(
                 children: [
-                  Icon(_currentIndex == 4
-                      ? Icons.library_add
-                      : Icons.library_add_outlined),
+                  Icon(
+                    _currentIndex == 4
+                        ? Icons.library_add
+                        : Icons.library_add_outlined,
+                    color: Colors.white,
+                  ),
                   Text(
                     'Library',
-                    style: TextStyle(fontSize: 9.0),
+                    style: TextStyle(fontSize: 9.0, color: Colors.white),
                   ),
                 ],
               ),

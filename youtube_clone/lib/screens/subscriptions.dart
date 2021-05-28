@@ -8,6 +8,8 @@ class Subscriptions extends StatefulWidget {
 class _SubscriptionsState extends State<Subscriptions> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: Colors.grey[900],
+    );
   }
 }
