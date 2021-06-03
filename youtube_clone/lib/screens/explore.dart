@@ -29,7 +29,7 @@ class _ExploreState extends State<Explore> {
                     getExplore(
                         'Trending',
                         'assets/trending.jpg',
-                        Icon(Icons.trending_down,
+                        Icon(Icons.trending_up,
                             color: Colors.white, size: 32.0)),
                     getExplore(
                         'Music',
@@ -61,6 +61,17 @@ class _ExploreState extends State<Explore> {
           Padding(
               padding: const EdgeInsets.only(top: 1.0),
               child: Divider(height: 1.0, color: Colors.grey[800])),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
+            child: Text(
+              'Trending Videos',
+              style: TextStyle(color: Colors.white, fontSize: 16.0),
+            ),
+          ),
+          Column(
+            children: videosList(),
+          ),
         ],
       ),
     );
