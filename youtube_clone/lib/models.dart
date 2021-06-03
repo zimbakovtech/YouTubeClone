@@ -24,6 +24,18 @@ List videosList() {
   return videos;
 }
 
+List storyList() {
+  List<Widget> stories = [];
+
+  for (int x = 0; x < 5; x++) {
+    for (int i = 0; i < 3; i++) {
+      stories.add(getStory(i));
+    }
+  }
+
+  return stories;
+}
+
 Container suggestion(String text) {
   return Container(
     height: 20.0,
@@ -165,6 +177,40 @@ Container getExplore(String name, String image, Icon icon) {
           ),
         ),
       ],
+    ),
+  );
+}
+
+Container getStory(int i) {
+  return Container(
+    height: 60.0,
+    child: Container(
+      width: 90.0,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            height: 50.0,
+            width: 50.0,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(videos[i].profile),
+                  fit: BoxFit.contain,
+                ),
+                shape: BoxShape.circle),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5.0),
+            child: Container(
+              child: Text(
+                videos[i].name,
+                style: TextStyle(color: Colors.grey[700]),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ),
+        ],
+      ),
     ),
   );
 }
