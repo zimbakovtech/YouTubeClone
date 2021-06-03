@@ -13,65 +13,6 @@ class _HomeState extends State<Home> {
       backgroundColor: Colors.grey[900],
       body: ListView(
         children: [
-          AppBar(
-            elevation: 0.0,
-            backgroundColor: Colors.grey[900],
-            title: Row(
-              children: [
-                Container(
-                  height: 18.0,
-                  width: 25.0,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/youtube.png'),
-                      fit: BoxFit.fill,
-                    ),
-                    shape: BoxShape.rectangle,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
-                  child: Text(
-                    'YouTube',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18.0,
-                      letterSpacing: -1,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            actions: [
-              IconButton(
-                icon: Icon(Icons.cast_outlined, color: Colors.white),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(Icons.notifications_outlined, color: Colors.white),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(Icons.search_outlined, color: Colors.white),
-                onPressed: () => Navigator.of(context).pushNamed('/search'),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 8.0),
-                child: Container(
-                  height: 25.0,
-                  width: 25.0,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/dm.jpg'),
-                      fit: BoxFit.contain,
-                    ),
-                    shape: BoxShape.circle,
-                  ),
-                ),
-              ),
-            ],
-          ),
           Padding(
             padding: const EdgeInsets.only(bottom: 8.0),
             child: Divider(
