@@ -5,7 +5,7 @@ List suggestionList() {
   List<Widget> suggestions = [];
 
   for (int i = 0; i < 12; i++) {
-    suggestions.add(suggestion(suggestionsNames[i]));
+    suggestions.add(getSuggestion(suggestionsNames[i]));
     suggestions.add(SizedBox(width: 6.0));
   }
 
@@ -17,7 +17,7 @@ List videosList() {
 
   for (int x = 0; x < 3; x++) {
     for (int i = 0; i < 3; i++) {
-      videos.add(video(i));
+      videos.add(getVideo(i));
     }
   }
 
@@ -36,7 +36,31 @@ List storyList() {
   return stories;
 }
 
-Container suggestion(String text) {
+List recentList() {
+  List<Widget> recents = [];
+
+  for (int x = 0; x < 4; x++) {
+    for (int i = 0; i < 3; i++) {
+      recents.add(getRecent(i));
+    }
+  }
+
+  return recents;
+}
+
+List playlistList() {
+  List<Widget> playlists = [];
+
+  for (int x = 0; x < 4; x++) {
+    for (int i = 0; i < 3; i++) {
+      playlists.add(getPlaylist(i));
+    }
+  }
+
+  return playlists;
+}
+
+Container getSuggestion(String text) {
   return Container(
     height: 20.0,
     child: Center(
@@ -55,7 +79,7 @@ Container suggestion(String text) {
   );
 }
 
-Container video(int i) {
+Container getVideo(int i) {
   return Container(
     height: 309.0,
     child: Column(
@@ -210,6 +234,133 @@ Container getStory(int i) {
             ),
           ),
         ],
+      ),
+    ),
+  );
+}
+
+Container getRecent(int i) {
+  return Container(
+    height: 70.0,
+    width: 160.0,
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Stack(
+            alignment: Alignment.bottomRight,
+            children: [
+              Container(
+                height: 70.0,
+                width: 160.0,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(videos[i].thumbnail),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 5.0, bottom: 5.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      height: 20.0,
+                      alignment: Alignment.center,
+                      color: Colors.black,
+                      child: Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Text(
+                          videos[i].duration,
+                          style: TextStyle(color: Colors.white, fontSize: 13.0),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 5.0),
+            child: Row(
+              children: [
+                Container(
+                  width: 120.0,
+                  child: Text(
+                    videos[i].title,
+                    style: TextStyle(color: Colors.white),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                  ),
+                ),
+                Spacer(),
+                Icon(
+                  Icons.more_vert,
+                  color: Colors.white,
+                  size: 18.0,
+                ),
+              ],
+            ),
+          ),
+          Text(
+            videos[i].name,
+            style: TextStyle(
+              color: Colors.grey[700],
+              fontSize: 13.0,
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+InkWell getPlaylist(int i) {
+  return InkWell(
+    onTap: () {},
+    child: Container(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+        child: Row(
+          children: [
+            Container(
+              height: 37.0,
+              width: 37.0,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(videos[i].profile),
+                  fit: BoxFit.fill,
+                ),
+                shape: BoxShape.rectangle,
+              ),
+            ),
+            SizedBox(width: 15.0),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  videos[i].title,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 15.5,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Text(
+                  '${videos[i].name} · ${videos[i].time} videos',
+                  style: TextStyle(
+                    color: Colors.grey[700],
+                    fontSize: 14.0,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     ),
   );
